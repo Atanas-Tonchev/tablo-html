@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Разпределение на електрическо табло</title>
+  <style>
+    @page { size: A4 portrait; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e5e7eb; }
+    body { font-family: Arial, sans-serif; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 8mm; background: #f8fafc; }
+    h1 { margin: 0; text-align: center; font-size: 7mm; color: #111827; }
+    .subtitle { margin: 2mm 0 5mm; text-align: center; font-size: 3.8mm; color: #374151; }
+    .cabinet { padding: 5mm; margin-bottom: 4mm; border: 0.7mm solid #4b5563; border-radius: 4mm; background: linear-gradient(135deg,#eef1f4,#cfd4d9 50%,#aeb5bb); box-shadow: 0 2mm 3mm #0003; }
+    .row-label { display: inline-block; margin-bottom: 3mm; padding: 1.5mm 4mm; border-radius: 2mm; color: white; background: #1f2937; font-size: 4.2mm; font-weight: bold; }
+    .bus { height: 2mm; margin: 1mm 0 4mm; border-radius: 2mm; background: #8b451f; }
+    .bus.n { margin-top: -3mm; background: #0877d1; }
+    .breakers { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2.2mm; }
+    .breaker { min-height: 31mm; padding: 2mm 1mm; border: .5mm solid #374151; border-radius: 1.5mm; background: linear-gradient(#fff,#d9dde1); text-align: center; }
+    .q { font-size: 4.5mm; font-weight: bold; }
+    .switch { width: 8mm; height: 13mm; margin: 3mm auto 2mm; border-radius: 1mm; background: #252525; box-shadow: inset 0 2mm #111827; }
+    .led { width: 1.8mm; height: 1.8mm; margin: 0 auto 1.5mm; border-radius: 50%; background: #dc2626; }
+    .label { min-height: 8mm; font-size: 3.3mm; line-height: 1.25; }
+    .lower .breakers { grid-template-columns: repeat(6, 1fr); }
+    .info { padding: 4mm; border: .5mm solid #9ca3af; border-radius: 3mm; background: white; }
+    .info h2 { margin: 0 0 3mm; font-size: 4.8mm; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .columns h3 { margin: 0 0 2mm; font-size: 4mm; }
+    .columns p { margin: 1.2mm 0; font-size: 3.4mm; }
+    .legend { margin-top: 4mm; display: flex; gap: 6mm; flex-wrap: wrap; font-size: 3.4mm; }
+    .legend span::before { content: ''; display: inline-block; width: 8mm; height: 2mm; margin-right: 2mm; vertical-align: middle; border-radius: 2mm; background: #8b451f; }
+    .legend .n::before { background: #0877d1; }
+    .legend .pe::before { background: #8dcc24; }
+    .note { margin-top: 4mm; font-size: 3.4mm; font-weight: bold; }
+    @media print { html, body { background: white; } .page { margin: 0; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>РАЗПРЕДЕЛЕНИЕ НА ЕЛЕКТРИЧЕСКО ТАБЛО</h1>
+    <div class="subtitle">Без главен прекъсвач • Вход за главно захранване: 230/400 V</div>
+
+    <section class="cabinet">
+      <div class="row-label">ГОРЕН РЕД</div>
+      <div class="bus"></div><div class="bus n"></div>
+      <div class="breakers">
+        <div class="breaker"><div class="q">Q1</div><div class="switch"></div><div class="led"></div><div class="label">Бойлер Мони</div></div>
+        <div class="breaker"><div class="q">Q2</div><div class="switch"></div><div class="led"></div><div class="label">Бойлер</div></div>
+        <div class="breaker"><div class="q">Q3</div><div class="switch"></div><div class="led"></div><div class="label">Контакти<br>Бети</div></div>
+        <div class="breaker"><div class="q">Q4</div><div class="switch"></div><div class="led"></div><div class="label">Климатик<br>Бети</div></div>
+        <div class="breaker"><div class="q">Q5</div><div class="switch"></div><div class="led"></div><div class="label">Контакти<br>Мони</div></div>
+        <div class="breaker"><div class="q">Q6</div><div class="switch"></div><div class="led"></div><div class="label">Климатик<br>Мони</div></div>
+        <div class="breaker"><div class="q">Q7</div><div class="switch"></div><div class="led"></div><div class="label">Осветление</div></div>
+      </div>
+    </section>
+
+    <section class="cabinet lower">
+      <div class="row-label">ДОЛЕН РЕД</div>
+      <div class="bus"></div><div class="bus n"></div>
+      <div class="breakers">
+        <div class="breaker"><div class="q">Q8</div><div class="switch"></div><div class="led"></div><div class="label">Климатик<br>кухня</div></div>
+        <div class="breaker"><div class="q">Q9</div><div class="switch"></div><div class="led"></div><div class="label">Фурна<br>кухня</div></div>
+        <div class="breaker"><div class="q">Q10</div><div class="switch"></div><div class="led"></div><div class="label">Контакти<br>пералня</div></div>
+        <div class="breaker"><div class="q">Q11</div><div class="switch"></div><div class="led"></div><div class="label">Контакти<br>хладилник</div></div>
+        <div class="breaker"><div class="q">Q12</div><div class="switch"></div><div class="led"></div><div class="label">Климатик<br>спалня</div></div>
+        <div class="breaker"><div class="q">Q13</div><div class="switch"></div><div class="led"></div><div class="label">Контакти<br>спалня</div></div>
+      </div>
+    </section>
+
+    <section class="info">
+      <h2>Подредба на автоматите</h2>
+      <div class="columns">
+        <div><h3>Горен ред</h3><p>Q1 — Бойлер Мони</p><p>Q2 — Бойлер</p><p>Q3 — Контакти Бети</p><p>Q4 — Климатик Бети</p><p>Q5 — Контакти Мони</p><p>Q6 — Климатик Мони</p><p>Q7 — Осветление</p></div>
+        <div><h3>Долен ред</h3><p>Q8 — Климатик кухня</p><p>Q9 — Фурна кухня</p><p>Q10 — Контакти пералня</p><p>Q11 — Контакти хладилник</p><p>Q12 — Климатик спалня</p><p>Q13 — Контакти спалня</p></div>
+      </div>
+      <div class="legend"><span>Фаза L</span><span class="n">Нула N</span><span class="pe">Заземяване PE</span></div>
+      <div class="note">Забележка: няма главен прекъсвач. При печат избери формат A4, мащаб 100% и ориентация Portrait.</div>
+    </section>
+  </main>
+</body>
+</html>
